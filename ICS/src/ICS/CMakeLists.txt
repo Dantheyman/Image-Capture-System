@@ -106,7 +106,10 @@ catkin_package(
 #  CATKIN_DEPENDS rospy
 #  DEPENDS system_lib
 )
-catkin_install_python(PROGRAMS scripts/publisher_gps.py scripts/subscriber_main.py scripts/publisher_basler_camera.py scripts/publisher_basler_camera2.py scripts/gui.py
+catkin_install_python(PROGRAMS scripts/gps.py 
+  scripts/main.py 
+  scripts/camera.py 
+  scripts/gui.py 
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
    )
 ###########
@@ -118,6 +121,11 @@ catkin_install_python(PROGRAMS scripts/publisher_gps.py scripts/subscriber_main.
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+)
+
+install(DIRECTORY utils/
+  DESTINATION ${CATKIN_PACKAGE_PYTHON_DESTINATION}/ICS/utils
+  FILES_MATCHING PATTERN "*.py"
 )
 
 ## Declare a C++ library

@@ -1,0 +1,1 @@
+store_photos_path = "/home/daniel/capture1"
